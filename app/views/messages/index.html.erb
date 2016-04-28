@@ -1,0 +1,60 @@
+
+<div id='messages'>
+  <ul id='messages-list'>
+    <% @current_messages.each do |message| %>
+      <li class='discussion <%= "me" if @current_user.uid == message.user.uid %>'>
+        <div class='avatar'>
+          <%= message.user.uid %>:
+
+          <div class='messages'>
+          <%= message.body %>
+
+          <div class='time'>
+            (<%= l message.created_at, format: :short %>)
+          </div>
+
+        </div>
+        </div>
+        
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id='message-form-wrapper'>
+  <%= form_for :message, html: { id: 'message-form' } do |f| %>
+    <%= f.text_area :body, id: 'message-form-body' %>
+    <%= f.submit id: 'message-form-submit' %>
+  <% end %>
+</div>
+
+
+<!-- <div id='messages'>
+  <ul id='messages-list'>
+    <% @current_messages.each do |message| %>
+      <li class='messages-list-item discussion <%= "me" if @current_user.uid == message.user.uid %>'>
+        <div class='messages-list-item-name avatar'>
+          <%= message.user.uid %>:
+
+          <div class='messages-list-item-body messages'>
+          <%= message.body %>
+
+          <div class='messages-list-item-timestamp time'>
+            (<%= l message.created_at, format: :short %>)
+          </div>
+
+        </div>
+        </div>
+        
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id='message-form-wrapper'>
+  <%= form_for :message, html: { id: 'message-form' } do |f| %>
+    <%= f.text_area :body, id: 'message-form-body' %>
+    <%= f.submit id: 'message-form-submit' %>
+  <% end %>
+</div>
+ -->

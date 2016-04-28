@@ -4,7 +4,7 @@
     <% @current_messages.each do |message| %>
       <li class='discussion <%= "me" if @current_user.uid == message.user.uid %>'>
         <div class='avatar'>
-          <%= message.user.uid %>:
+          <%= message.user.name %>:
 
           <div class='messages'>
           <%= message.body %>

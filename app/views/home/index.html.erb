@@ -1,11 +1,6 @@
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>User Info</title>
-        
-<style type='text/css'>body {
-  background: #ccc;
+<style type='text/css'>
+
+body {
   font-family: "Lucida Grande", "Lucida Sans", Helvetica, Arial, sans-serif;
 }
 
@@ -13,11 +8,10 @@ h1 {
   text-align: center;
   margin: 30px auto 0px;
   font-size: 18px;
-  padding: 10px 10px 15px;
-  background: #555;
+  padding: 15px 10px 15px;
+  background: rgba(47, 42, 42, 0.27);
   color: white;
-  width: 320px;
-  border: 10px solid #444;
+  width: 30%;
   border-bottom: 0;
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
@@ -33,12 +27,11 @@ h1, form {
 }
 
 form {
-  background: white;
-  border: 10px solid #eee;
-  border-top: 0;
-  padding: 20px;
+  background: rgba(47, 42, 42, 0.27);
+  padding: 35px;
   margin: 0px auto 40px;
-  width: 300px;
+  width: 30%;
+  color: #FFF;
   -moz-border-radius-bottomleft: 10px;
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -62,16 +55,28 @@ input {
 }
 
 input#identifier, input#openid_url {
-  background: url(http://openid.net/login-bg.gif) no-repeat;
   background-position: 0 50%;
   padding-left: 18px;
 }
 
 button {
-  font-size: 22px;
-  padding: 4px 8px;
-  display: block;
-  margin: 20px auto 0;
+  color: #ffffff;
+  background-color: #2780e3;
+  border-color: #2780e3;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 10px 18px;
+  font-size: 15px;
+  line-height: 1.42857143;
+  border-radius: 6%;
+  margin-left: 6.5em;
+  margin-top: 1em;
+  -webkit-user-select: none;
 }
 
 fieldset {
@@ -85,17 +90,52 @@ fieldset input {
   width: 260px;
   font-size: 16px;
 }
-</style>
-        
-      </head>
-      <body>
-      <h1>User Info</h1>
-      <form method='post' action='/auth/developer/callback' noValidate='noValidate'>
 
-<label for='name'>Name:</label>
-<input type='text' id='name' name='name'/>
-<label for='email'>Email:</label>
-<input type='text' id='email' name='email'/>
-<button type='submit'>Sign In</button>      </form>
-      </body>
-      </html>
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: url('/assets/w.png');
+  width: 100%;
+  height: 100%;
+  background-color: brown; 
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 3em;
+  color: #000;
+}
+
+.heading{
+  font-size: 3.5em;
+  margin-top: -15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #FFF;
+  position: relative;
+  margin-left: 8em;
+}
+</style>
+
+<div class="background-image"></div>
+<div class="content">
+  <span class="heading">Welcome!</span>
+  <h1>User Info</h1>
+  <form method='post' action='/auth/developer/callback' noValidate='noValidate'>
+
+    <label for='name'>Name:</label>
+    <input type='text' id='name' name='name'/>
+    <label for='email'>Email:</label>
+    <input type='text' id='email' name='email'/>
+    <button type='submit'>Sign In</button>
+  </form>
+  </div>

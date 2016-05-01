@@ -24,6 +24,6 @@
 <div id='message-form-wrapper'>
   <%= form_for :message, html: { id: 'message-form' } do |f| %>
     <%= f.text_area :body, id: 'message-form-body' %>
-    <%= f.submit id: 'message-form-submit' %>
+    <%= f.submit "Send", id: 'message-form-submit' %>
   <% end %>
 </div>

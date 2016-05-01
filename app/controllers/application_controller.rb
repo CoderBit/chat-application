@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_current_user
-    redirect_to '/auth/developer' unless current_user
+    redirect_to '/auth/' unless current_user
   end
 end
